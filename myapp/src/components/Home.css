@@ -1,0 +1,148 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-bg: #f8f9fa;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+}
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.hero-section {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.auth-section {
+  flex: 1;
+  padding: 4rem 1rem;
+}
+
+.auth-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--text-light);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.role-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.role-card {
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: var(--light-bg);
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.teacher-card:hover {
+  border-bottom: 4px solid var(--secondary-color);
+}
+
+.student-card:hover {
+  border-bottom: 4px solid #2ecc71;
+}
+
+.role-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.role-title {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.role-description {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.role-button {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+.home-footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .auth-card {
+    padding: 1rem;
+  }
+  
+  .role-selector {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
