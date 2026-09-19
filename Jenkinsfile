@@ -3,7 +3,7 @@ Pipeline{
     Stages{
         Stage('Checkout'){
             steps{
-                git branch:'main' url:'https://github.com/Sabir-git/Teacher_Student_App.git'           }
+                git branch: 'main' url: 'https://github.com/Sabir-git/Teacher_Student_App.git'           }
         }
         Stage('Build'){
             steps{
