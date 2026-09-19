@@ -1,0 +1,54 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./myapp
+    ports: 
+      - "3000:80"
+    networks:
+      - teacher-student  
+
+        
+  backend:
+    container_name: backend
+    build:
+      context: ./backend/backend/demo
+    
+    ports:
+      - "8081:8080"
+    
+    networks:
+      - teacher-student
+    
+    depends_on:
+      database:
+        condition: service_healthy
+         
+
+  
+    
+  database:
+    container_name: mysql
+    image: mysql:8.0
+    
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: teacher_student
+
+    networks:
+      - teacher-student
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s 
+      retries: 20
+      start_period: 60s  
+
+
+networks:
+  teacher-student:
+    external: true
+      
