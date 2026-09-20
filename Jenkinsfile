@@ -28,7 +28,7 @@ pipeline {
             }
         }
     }
-    post{
+    post {
         always{
             sh 'docker compose logs --tail=100 || true'
         }
