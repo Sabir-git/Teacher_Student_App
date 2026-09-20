@@ -8,6 +8,11 @@ pipeline {
                     url: 'https://github.com/Sabir-git/Teacher_Student_App.git'
             }
         }
+        stage('cleanup'){
+            steps {
+                sh 'docker compose down || true'
+            }
+        }
 
         stage('Build') {
             steps {
