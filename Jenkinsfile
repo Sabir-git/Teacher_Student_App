@@ -28,4 +28,15 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            sh 'docker compose logs --tail=100 || true'
+        }
+        success{
+            echo 'pipeline completed successfully'
+        }
+       failure{
+           echo 'pipeline failed. see above logs..'
+       } 
+    }
 }
