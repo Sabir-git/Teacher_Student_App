@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/Sabir-git/Teacher_Student_App.git'
+                script {
+                    clone('https://github.com/Sabir-git/Teacher_Student_App.git' , 'main')
+                }        
             }
         }
         stage('cleanup'){
